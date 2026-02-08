@@ -97,16 +97,14 @@ const MessageSection = () => {
               
               <div className="space-y-4 text-foreground text-lg leading-relaxed">
                 <p>
-                  On this special day, I want you to know just how incredibly special you are. 
-                  Your smile lights up every room, and your kindness touches everyone around you.
+                  I feel really lucky that I met you during the induction. Back then, when we first introduced ourselves, everything felt so simple and normal. We barely knew each other, and honestly, at first I even thought you were a little rude. But time changed everything. Slowly, we started understanding each other, and now it feels so special that we know so much about one another without even having to explain much.
                 </p>
                 <p>
-                  You deserve all the happiness in the world, today and every day. 
-                  May this new year of your life bring you closer to all your dreams and fill your heart with joy.
+                 I genuinely love going on walks with you. Every time we walk together and come back home, I feel lighter, calmer, and happier. Those deep conversations we share, the way we tease each other, and all the little moments mean more to me than you probably realize. That Buddha Temple walk will always stay close to my heart.
                 </p>
                 <p>
-                  Thank you for being such an amazing person and for making the world a brighter place 
-                  just by being in it. Here's to another year of beautiful memories together!
+                  I really hope we always stay like this and that nothing ever comes between us. I just want to celebrate your birthday in the best way and see you smiling. Please don’t let small things make you sad you deserve happiness more than anything. And always remember, no matter how low you feel or how many ups and downs life brings, I’m always here for you. You’re never alone, and you never have to doubt that.
+Happy Birthday 🤍✨
                 </p>
               </div>
 
@@ -130,3 +128,4 @@ const MessageSection = () => {
 };
 
 export default MessageSection;
+
