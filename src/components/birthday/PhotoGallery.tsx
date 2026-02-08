@@ -2,18 +2,18 @@ import { motion } from "framer-motion";
 import { Camera, Heart } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-import ananya1 from "@/assets/ananya-1.jpeg";
-import ananya2 from "@/assets/ananya-2.jpeg";
-import ananya3 from "@/assets/ananya-3.jpeg";
-import ananya4 from "@/assets/ananya-4.jpeg";
-import ananya5 from "@/assets/ananya-5.jpeg";
+import ananya1 from "@/assets/whatsapp_image_2026-02-08_at_4.19.31_pm.jpeg";
+import ananya2 from "@/assets/whatsapp_image_2026-02-08_at_4.19.32_pm.jpeg";
+import ananya3 from "@/assets/whatsapp_image_2026-02-08_at_4.19.34_pm.jpeg";
+import ananya4 from "@/assets/whatsapp_image_2026-02-01_at_3.04.44_pm.jpeg";
+import ananya5 from "@/assets/whatsapp_image_2026-02-01_at_3.04.45_pm.jpeg";
 
 const photos = [
-  { id: 1, src: ananya1, caption: "Shopping vibes ✨" },
-  { id: 2, src: ananya2, caption: "Elegant queen 👑" },
-  { id: 3, src: ananya3, caption: "Night out 💜" },
-  { id: 4, src: ananya4, caption: "Mountain adventures 🏔️" },
-  { id: 5, src: ananya5, caption: "Looking stunning 💕" },
+  { id: 1, src: ananya1, caption: "Precious memories" },
+  { id: 2, src: ananya2, caption: "Growing up" },
+  { id: 3, src: ananya3, caption: "Sweet moments" },
+  { id: 4, src: ananya4, caption: "Elegant vibes" },
+  { id: 5, src: ananya5, caption: "Beautiful you" },
 ];
 
 const PhotoGallery = () => {
