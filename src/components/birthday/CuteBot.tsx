@@ -1,103 +1,104 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
-import { useState } from "react";
+import { motion } from "framer-motion";
 
 const CuteBot = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <div className="fixed bottom-6 right-6 z-50">
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.5, y: 20 }}
-            transition={{ type: "spring", damping: 15 }}
-            className="mb-4 mr-2"
-          >
-            <div className="bg-gradient-to-br from-pink to-coral rounded-3xl shadow-2xl overflow-hidden border-2 border-primary/20 max-w-xs">
-              <div className="p-6 relative">
-                {/* Cute bot character */}
-                <div className="flex flex-col items-center mb-4">
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.1, 1],
-                      rotate: [-5, 5, -5],
-                    }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="text-5xl mb-3"
-                  >
-                    🤖
-                  </motion.div>
-                  <p className="text-center font-script text-2xl text-gradient font-bold">
-                    Cutie Ananya!
-                  </p>
-                </div>
+    <div className="flex flex-col items-center justify-center py-12">
+      {/* Standing dancing bot */}
+      <div className="relative">
+        {/* Bot body with dancing animation */}
+        <motion.div
+          animate={{
+            y: [0, -20, 0],
+            rotate: [-5, 5, -5],
+          }}
+          transition={{
+            duration: 1.2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="text-9xl"
+        >
+          🤖
+        </motion.div>
 
-                {/* Message bubble */}
-                <div className="bg-white/90 rounded-2xl p-4 shadow-lg mb-4">
-                  <p className="text-foreground text-center font-semibold">
-                    ✨ Happy Birthday! 🎉
-                  </p>
-                  <p className="text-foreground text-sm text-center mt-2 leading-relaxed">
-                    You're absolutely amazing and deserve all the happiness in the world!
-                  </p>
-                </div>
+        {/* Dancing legs effect */}
+        <motion.div
+          animate={{
+            x: [-15, 15, -15],
+          }}
+          transition={{
+            duration: 1.2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-24 left-1/2 transform -translate-x-1/2 text-4xl"
+        >
+          👟
+        </motion.div>
 
-                {/* Floating hearts */}
-                <div className="flex justify-center gap-2 mb-3">
-                  {[...Array(3)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      animate={{
-                        y: [0, -15, 0],
-                        scale: [1, 1.2, 1],
-                      }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        delay: i * 0.2,
-                      }}
-                    >
-                      <span className="text-2xl">💕</span>
-                    </motion.div>
-                  ))}
-                </div>
+        {/* Floating hearts around the bot */}
+        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+          {[...Array(5)].map((_, i) => (
+            <motion.div
+              key={i}
+              animate={{
+                y: [-40, -100],
+                x: Math.cos((i / 5) * Math.PI * 2) * 40,
+                opacity: [1, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                delay: i * 0.2,
+              }}
+              className="absolute text-3xl"
+            >
+              ✨
+            </motion.div>
+          ))}
+        </div>
 
-                {/* Close button */}
-                <motion.button
-                  onClick={() => setIsOpen(false)}
-                  className="w-full px-4 py-2 bg-primary text-primary-foreground rounded-full font-semibold hover:shadow-lg transition-shadow flex items-center justify-center gap-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <X className="w-4 h-4" />
-                  Got it!
-                </motion.button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        {/* Sparkles around bot */}
+        <div>
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              animate={{
+                scale: [0.5, 1.5, 0.5],
+                opacity: [0.5, 1, 0.5],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: i * 0.15,
+              }}
+              className="absolute text-2xl"
+              style={{
+                left: `${50 + Math.cos((i / 6) * Math.PI * 2) * 60}%`,
+                top: `${Math.sin((i / 6) * Math.PI * 2) * 60}px`,
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              💫
+            </motion.div>
+          ))}
+        </div>
+      </div>
 
-      {/* Bot button */}
-      <motion.button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full shadow-2xl flex items-center justify-center text-4xl hover:shadow-xl transition-shadow border-4 border-primary-foreground/20"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        animate={{
-          y: [0, -10, 0],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+      {/* Birthday message below */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+        className="mt-12 text-center"
       >
-        🤖
-      </motion.button>
+        <p className="font-script text-3xl text-gradient font-bold mb-3">
+          Let's Celebrate! 🎉
+        </p>
+        <p className="text-muted-foreground text-lg max-w-md">
+          Your special day is here to spread joy and happiness!
+        </p>
+      </motion.div>
     </div>
   );
 };
